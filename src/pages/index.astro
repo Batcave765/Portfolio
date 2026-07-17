@@ -16,10 +16,7 @@ import '../styles/global.css';
 				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
 					return localStorage.getItem('theme');
 				}
-				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-					return 'dark';
-				}
-				return 'light';
+				return 'dark';
 			})();
 			if (theme === 'dark') {
 				document.documentElement.setAttribute('data-theme', 'dark');
@@ -30,7 +27,20 @@ import '../styles/global.css';
 		</script>
 	</head>
 	<body>
-		<button id="theme-toggle" class="mono badge fixed-theme-btn" aria-label="Toggle Theme">[ ◐ ]</button>		<main class="schematic-container">
+		<nav class="command-bar">
+			<div class="nav-group">
+				<a href="#expertise" class="nav-link">[ EXPERTISE ]</a>
+				<a href="#experience" class="nav-link">[ EXPERIENCE ]</a>
+				<a href="#projects" class="nav-link">[ PROJECTS ]</a>
+				<a href="#education-awards" class="nav-link">[ EDU / AWARDS ]</a>
+			</div>
+			<div class="nav-group">
+				<a href={`${import.meta.env.BASE_URL}/Sriram_M_Software_Engineer_Resume.pdf`} target="_blank" class="nav-link">[ RESUME ]</a>
+				<a href="mailto:msriram765@gmail.com" class="nav-link">[ EMAIL ]</a>
+				<button id="theme-toggle" class="nav-btn" aria-label="Toggle Theme">[ ◐ THEME ]</button>
+			</div>
+		</nav>
+		<main class="schematic-container">
 			
 			<header class="hero-wrapper">
 				<img src={`${import.meta.env.BASE_URL}/Sriram.jpg`} alt="Portrait of Sriram" class="hero-image" />
@@ -154,9 +164,15 @@ import '../styles/global.css';
 					</article>
 
 					<article class="item-block">
-						<h3 class="item-title" style="font-size: var(--text-lg);">Awards</h3>
-						<p style="margin-bottom: 0.5rem;"><strong>Second Runner-up (National)</strong> — Innohacks '22 (KIET Group of Institutions)</p>
-						<p style="margin-bottom: 0;"><strong>Most Impactful Hack (National)</strong> — Hack @ SKCET (Feb 2022)</p>
+						<h3 class="item-title" style="font-size: var(--text-lg); margin-bottom: 1rem;">Awards</h3>
+						<div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+							<p style="margin: 0;"><strong>Second Runner-up (National)</strong> — Innohacks '22</p>
+							<span class="mono" style="color: var(--ink-faint); font-size: var(--text-sm);">MAY 2022</span>
+						</div>
+						<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+							<p style="margin: 0;"><strong>Most Impactful Hack (National)</strong> — Hack @ SKCET</p>
+							<span class="mono" style="color: var(--ink-faint); font-size: var(--text-sm);">FEB 2022</span>
+						</div>
 					</article>
 
 				</div>
