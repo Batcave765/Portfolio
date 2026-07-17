@@ -1,12 +1,13 @@
 ---
 import '../styles/global.css';
+const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg?v=2`} />
+		<link rel="icon" type="image/svg+xml" href={`${baseUrl}/favicon.svg?v=2`} />
 		<meta name="viewport" content="width=device-width" />
 		<title>Sriram M — Software Engineer</title>
 		<meta name="description" content="Software Engineer specializing in performance-driven development and local-first architectures." />
@@ -39,7 +40,7 @@ import '../styles/global.css';
 					<a href="#education-awards" class="nav-link">[ EDU / AWARDS ]</a>
 				</div>
 				<div class="nav-group">
-					<a href={`${import.meta.env.BASE_URL}/Sriram_M_Software_Engineer_Resume.pdf`} target="_blank" class="nav-link">[ RESUME ]</a>
+					<a href={`${baseUrl}/Sriram_M_Software_Engineer_Resume.pdf`} target="_blank" class="nav-link">[ RESUME ]</a>
 					<a href="mailto:msriram765@gmail.com" class="nav-link">[ EMAIL ]</a>
 					<button id="theme-toggle" class="nav-btn" aria-label="Toggle Theme">[ ◐ THEME ]</button>
 				</div>
@@ -48,7 +49,7 @@ import '../styles/global.css';
 		<main class="schematic-container">
 			
 			<header class="hero-wrapper">
-				<img src={`${import.meta.env.BASE_URL}/Sriram.jpg`} alt="Portrait of Sriram" class="hero-image" />
+				<img src={`${baseUrl}/Sriram.jpg`} alt="Portrait of Sriram" class="hero-image" />
 				<div class="hero-title-container">
 					<div class="hero-subtitle">Software Engineer</div>
 					<h1 class="hero-title">SRIRAM M.</h1>
