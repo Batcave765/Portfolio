@@ -1,0 +1,179 @@
+---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Sriram M — Software Engineer</title>
+		<meta name="description" content="Software Engineer specializing in performance-driven development and local-first architectures." />
+		<script is:inline>
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return 'dark';
+				}
+				return 'light';
+			})();
+			if (theme === 'dark') {
+				document.documentElement.setAttribute('data-theme', 'dark');
+			} else {
+				document.documentElement.setAttribute('data-theme', 'light');
+			}
+			window.localStorage.setItem('theme', theme);
+		</script>
+	</head>
+	<body>
+		<button id="theme-toggle" class="mono badge fixed-theme-btn" aria-label="Toggle Theme">[ ◐ ]</button>		<main class="schematic-container">
+			
+			<header class="hero-wrapper">
+				<img src="/Sriram.jpg" alt="Portrait of Sriram" class="hero-image" />
+				<div class="hero-title-container">
+					<div class="hero-subtitle">Software Engineer</div>
+					<h1 class="hero-title">SRIRAM M.</h1>
+				</div>
+			</header>
+
+			<section class="grid-section" id="meta">
+				<div class="section-header">
+					<h2 style="font-size: var(--text-lg); margin-bottom: 0.5rem;">SYS.INFO</h2>
+					<div class="mono" style="opacity: 0.8;">[LOCATION] Chennai, IND<br/>[STATUS] Online</div>
+				</div>
+				<div class="section-content">
+					<p>
+						Software Engineer with a strong foundation in performance-driven development, full-stack application design, and automation infrastructure. Proficient in building high-concurrency systems using Go and TypeScript, and creating highly responsive, local-first mobile architectures. Experienced in building internal developer tools and optimizing CI/CD automation pipelines within enterprise environments.
+					</p>
+					<div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;" class="mono">
+						<a href="mailto:msriram765@gmail.com">[EMAIL]</a>
+						<a href="https://www.linkedin.com/in/sriram-m765/" target="_blank" rel="noopener">[LINKEDIN]</a>
+						<a href="https://github.com/Batcave765" target="_blank" rel="noopener">[GITHUB]</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="grid-section" id="expertise">
+				<div class="section-header">
+					<h2 style="font-size: var(--text-lg);">EXPERTISE</h2>
+				</div>
+				<div class="section-content" style="display: flex; flex-wrap: wrap;">
+					<span class="badge">TypeScript</span>
+					<span class="badge">Go</span>
+					<span class="badge">JavaScript</span>
+					<span class="badge">Python</span>
+					<span class="badge">React Native</span>
+					<span class="badge">Expo</span>
+					<span class="badge">Next.js</span>
+					<span class="badge">React</span>
+					<span class="badge">Spring Boot</span>
+					<span class="badge">MMKV (C++ JSI)</span>
+					<span class="badge">Drizzle ORM</span>
+					<span class="badge">GCP</span>
+					<span class="badge">Grafana</span>
+					<span class="badge">Dynatrace</span>
+					<span class="badge">Docker</span>
+					<span class="badge">GitLab CI/CD</span>
+				</div>
+			</section>
+
+			<section class="grid-section" id="experience">
+				<div class="section-header">
+					<h2 style="font-size: var(--text-lg);">EXPERIENCE</h2>
+				</div>
+				<div class="section-content">
+					
+					<article class="item-block">
+						<div class="item-header">
+							<h3 class="item-title">Performance & Automation Eng.</h3>
+							<div class="mono" style="color: var(--ink-faint);">02/2025 – PRES</div>
+						</div>
+						<p class="mono" style="color: var(--ink); margin-bottom: 1rem;">Cognizant Tech. Solutions (Macy's Supply Chain)</p>
+						<ul style="padding-left: 1rem; margin: 0;">
+							<li>Develop custom k6 frameworks deployed to validate mission-critical Unified Orders Platform.</li>
+							<li>Engineered internal self-service developer tool within GitLab CI/CD, automating test workflows and dynamic reports.</li>
+							<li>Developed Python automation parsing raw performance logs, eliminating 3-4 hours of manual effort per cycle.</li>
+							<li>Analyze distributed systems under high-stress (3,000 TPS) via GCP, Grafana, and Dynatrace to isolate bottlenecks.</li>
+						</ul>
+					</article>
+
+					<article class="item-block">
+						<div class="item-header">
+							<h3 class="item-title">Web Development Intern</h3>
+							<div class="mono" style="color: var(--ink-faint);">05/2023 – 07/2023</div>
+						</div>
+						<p class="mono" style="color: var(--ink); margin-bottom: 1rem;">DevCrew</p>
+						<ul style="padding-left: 1rem; margin: 0;">
+							<li>Engineered frontend features and refactored core application UI components for client web projects using React.js and Next.js.</li>
+							<li>Identified, isolated, and resolved runtime bugs and interface regressions, improving frontend stability.</li>
+						</ul>
+					</article>
+
+				</div>
+			</section>
+
+			<section class="grid-section" id="projects">
+				<div class="section-header">
+					<h2 style="font-size: var(--text-lg);">PROJECTS</h2>
+				</div>
+				<div class="section-content">
+					
+					<article class="item-block">
+						<div class="item-header">
+							<h3 class="item-title">Recur</h3>
+							<div class="mono" style="color: var(--ink-faint);">REACT NATIVE / EXPO</div>
+						</div>
+						<p><strong>Local-First Subscription Tracker.</strong> Built a highly polished cross-platform mobile app utilizing TypeScript and Expo v54 with New Architecture fully enabled. Implemented high-performance local storage using MMKV via C++ JavaScript Interface (JSI) bindings for near-instant operations.</p>
+					</article>
+
+					<article class="item-block">
+						<div class="item-header">
+							<h3 class="item-title">Koda</h3>
+							<div class="mono" style="color: var(--ink-faint);">GO / NEXT.JS 15</div>
+						</div>
+						<p><strong>Music Analysis Web Application.</strong> Architected a multi-service app to decode audio streams, calculate BPM, and identify musical keys. Developed a low-overhead backend engine in Go using Gin Gonic, implementing Krumhansl-Schmuckler detection algorithms via Gonum for FFT math.</p>
+					</article>
+
+				</div>
+			</section>
+
+			<section class="grid-section" id="education-awards">
+				<div class="section-header">
+					<h2 style="font-size: var(--text-lg);">EDU / AWARDS</h2>
+				</div>
+				<div class="section-content">
+					
+					<article class="item-block">
+						<h3 class="item-title" style="font-size: var(--text-lg);">B.Tech Information Technology</h3>
+						<p class="mono" style="margin-bottom: 0;">Sri Krishna College of Engineering and Technology</p>
+						<p class="mono" style="color: var(--ink-faint);">06/2021 – 06/2025</p>
+					</article>
+
+					<article class="item-block">
+						<h3 class="item-title" style="font-size: var(--text-lg);">Awards</h3>
+						<p style="margin-bottom: 0.5rem;"><strong>Second Runner-up (National)</strong> — Innohacks '22 (KIET Group of Institutions)</p>
+						<p style="margin-bottom: 0;"><strong>Most Impactful Hack (National)</strong> — Hack @ SKCET (Feb 2022)</p>
+					</article>
+
+				</div>
+			</section>
+
+			<footer class="footer">
+				&copy; {new Date().getFullYear()} SRIRAM M. // COMPILED SUCCESSFULLY.
+			</footer>
+			
+		</main>
+		<script>
+			document.getElementById('theme-toggle')?.addEventListener('click', () => {
+				const currentTheme = document.documentElement.getAttribute('data-theme');
+				const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+				document.documentElement.setAttribute('data-theme', newTheme);
+				localStorage.setItem('theme', newTheme);
+			});
+		</script>
+	</body>
+</html>
