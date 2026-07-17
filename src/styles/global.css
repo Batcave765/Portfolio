@@ -74,6 +74,21 @@ p {
   text-wrap: pretty;
 }
 
+ul {
+  padding-left: 1.25rem;
+  margin: 0 0 1.5rem 0;
+  max-width: 65ch;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  font-size: var(--text-base);
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
 a {
   color: var(--ink);
   text-decoration: none;
