@@ -27,17 +27,23 @@ import '../styles/global.css';
 		</script>
 	</head>
 	<body>
-		<nav class="command-bar">
-			<div class="nav-group">
-				<a href="#expertise" class="nav-link">[ EXPERTISE ]</a>
-				<a href="#experience" class="nav-link">[ EXPERIENCE ]</a>
-				<a href="#projects" class="nav-link">[ PROJECTS ]</a>
-				<a href="#education-awards" class="nav-link">[ EDU / AWARDS ]</a>
+		<nav class="command-bar" id="command-bar">
+			<div class="nav-header">
+				<span class="nav-logo">[ SRIRAM M. ]</span>
+				<button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Menu">[ ☰ ]</button>
 			</div>
-			<div class="nav-group">
-				<a href={`${import.meta.env.BASE_URL}/Sriram_M_Software_Engineer_Resume.pdf`} target="_blank" class="nav-link">[ RESUME ]</a>
-				<a href="mailto:msriram765@gmail.com" class="nav-link">[ EMAIL ]</a>
-				<button id="theme-toggle" class="nav-btn" aria-label="Toggle Theme">[ ◐ THEME ]</button>
+			<div class="nav-links-wrapper">
+				<div class="nav-group">
+					<a href="#expertise" class="nav-link">[ EXPERTISE ]</a>
+					<a href="#experience" class="nav-link">[ EXPERIENCE ]</a>
+					<a href="#projects" class="nav-link">[ PROJECTS ]</a>
+					<a href="#education-awards" class="nav-link">[ EDU / AWARDS ]</a>
+				</div>
+				<div class="nav-group">
+					<a href={`${import.meta.env.BASE_URL}/Sriram_M_Software_Engineer_Resume.pdf`} target="_blank" class="nav-link">[ RESUME ]</a>
+					<a href="mailto:msriram765@gmail.com" class="nav-link">[ EMAIL ]</a>
+					<button id="theme-toggle" class="nav-btn" aria-label="Toggle Theme">[ ◐ THEME ]</button>
+				</div>
 			</div>
 		</nav>
 		<main class="schematic-container">
@@ -100,7 +106,7 @@ import '../styles/global.css';
 					<article class="item-block">
 						<div class="item-header">
 							<h3 class="item-title">Performance & Automation Eng.</h3>
-							<div class="mono" style="color: var(--ink-faint);">02/2025 – PRES</div>
+							<div class="mono" style="color: var(--text-muted);">02/2025 – PRES</div>
 						</div>
 						<p class="mono" style="color: var(--ink); margin-bottom: 1rem;">Cognizant Tech. Solutions (Macy's Supply Chain)</p>
 						<ul style="padding-left: 1rem; margin: 0;">
@@ -114,7 +120,7 @@ import '../styles/global.css';
 					<article class="item-block">
 						<div class="item-header">
 							<h3 class="item-title">Web Development Intern</h3>
-							<div class="mono" style="color: var(--ink-faint);">05/2023 – 07/2023</div>
+							<div class="mono" style="color: var(--text-muted);">05/2023 – 07/2023</div>
 						</div>
 						<p class="mono" style="color: var(--ink); margin-bottom: 1rem;">DevCrew</p>
 						<ul style="padding-left: 1rem; margin: 0;">
@@ -135,7 +141,7 @@ import '../styles/global.css';
 					<article class="item-block">
 						<div class="item-header">
 							<h3 class="item-title">Recur</h3>
-							<div class="mono" style="color: var(--ink-faint);">REACT NATIVE / EXPO</div>
+							<div class="mono" style="color: var(--text-muted);">REACT NATIVE / EXPO</div>
 						</div>
 						<p><strong>Local-First Subscription Tracker.</strong> Built a highly polished cross-platform mobile app utilizing TypeScript and Expo v54 with New Architecture fully enabled. Implemented high-performance local storage using MMKV via C++ JavaScript Interface (JSI) bindings for near-instant operations.</p>
 					</article>
@@ -143,7 +149,7 @@ import '../styles/global.css';
 					<article class="item-block">
 						<div class="item-header">
 							<h3 class="item-title">Koda</h3>
-							<div class="mono" style="color: var(--ink-faint);">GO / NEXT.JS 15</div>
+							<div class="mono" style="color: var(--text-muted);">GO / NEXT.JS 15</div>
 						</div>
 						<p><strong>Music Analysis Web Application.</strong> Architected a multi-service app to decode audio streams, calculate BPM, and identify musical keys. Developed a low-overhead backend engine in Go using Gin Gonic, implementing Krumhansl-Schmuckler detection algorithms via Gonum for FFT math.</p>
 					</article>
@@ -160,18 +166,18 @@ import '../styles/global.css';
 					<article class="item-block">
 						<h3 class="item-title" style="font-size: var(--text-lg);">B.Tech Information Technology</h3>
 						<p class="mono" style="margin-bottom: 0;">Sri Krishna College of Engineering and Technology</p>
-						<p class="mono" style="color: var(--ink-faint);">06/2021 – 06/2025</p>
+						<p class="mono" style="color: var(--text-muted);">06/2021 – 06/2025</p>
 					</article>
 
 					<article class="item-block">
 						<h3 class="item-title" style="font-size: var(--text-lg); margin-bottom: 1rem;">Awards</h3>
 						<div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
 							<p style="margin: 0;"><strong>Second Runner-up (National)</strong> — Innohacks '22</p>
-							<span class="mono" style="color: var(--ink-faint); font-size: var(--text-sm);">MAY 2022</span>
+							<span class="mono" style="color: var(--text-muted); font-size: var(--text-sm);">MAY 2022</span>
 						</div>
 						<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
 							<p style="margin: 0;"><strong>Most Impactful Hack (National)</strong> — Hack @ SKCET</p>
-							<span class="mono" style="color: var(--ink-faint); font-size: var(--text-sm);">FEB 2022</span>
+							<span class="mono" style="color: var(--text-muted); font-size: var(--text-sm);">FEB 2022</span>
 						</div>
 					</article>
 
@@ -184,6 +190,9 @@ import '../styles/global.css';
 			
 		</main>
 		<script>
+			document.getElementById('hamburger-btn')?.addEventListener('click', () => {
+				document.getElementById('command-bar')?.classList.toggle('menu-open');
+			});
 			document.getElementById('theme-toggle')?.addEventListener('click', () => {
 				const currentTheme = document.documentElement.getAttribute('data-theme');
 				const newTheme = currentTheme === 'dark' ? 'light' : 'dark';

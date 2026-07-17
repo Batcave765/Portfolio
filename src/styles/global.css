@@ -5,6 +5,7 @@
   --bg: oklch(99% 0 0);
   --ink: oklch(45% 0.25 260); /* Yves Klein Blue */
   --ink-faint: oklch(85% 0.1 260);
+  --text-muted: oklch(60% 0.15 260);
   --border: var(--ink);
   --hero-glow: rgba(255, 255, 255, 0.8);
   
@@ -27,6 +28,7 @@
   --bg: oklch(12% 0.01 250); /* Deep cool charcoal */
   --ink: oklch(95% 0.01 250); /* Soft off-white */
   --ink-faint: oklch(22% 0.01 250); /* Faint grid lines */
+  --text-muted: oklch(70% 0.01 250); /* Accessible muted text */
   --border: oklch(35% 0.01 250); /* Muted structural borders */
   --hero-glow: rgba(10, 12, 18, 0.9);
 }
@@ -299,6 +301,36 @@ a:hover {
   font-size: var(--text-sm);
 }
 
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
+
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--ink);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-family: inherit;
+}
+
+.nav-links-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  margin-left: 2rem;
+}
+
 .nav-group {
   display: flex;
   gap: 1.5rem;
@@ -323,13 +355,38 @@ a:hover {
 
 @media (max-width: 768px) {
   .command-bar {
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+  .nav-header {
+    width: 100%;
+  }
+  .hamburger-btn {
+    display: block;
+  }
+  .nav-links-wrapper {
+    display: none;
     flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    border-bottom: 2px solid var(--border);
+    padding: 1.5rem;
+    margin: 0;
+  }
+  .command-bar.menu-open .nav-links-wrapper {
+    display: flex;
   }
   .nav-group {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .nav-group:last-child {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--border);
   }
 }
