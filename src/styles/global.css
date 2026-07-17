@@ -35,6 +35,11 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Prevents anchor links from clipping under the sticky header */
+}
+
 body {
   margin: 0;
   background-color: var(--bg);
