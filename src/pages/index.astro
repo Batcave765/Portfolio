@@ -2,7 +2,16 @@
 import '../styles/global.css';
 import Analytics from '@vercel/analytics/astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
+
 const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
+
+const skills = [
+	['Languages', 'TypeScript · Go · JavaScript · Python · Java · C/C++ · SQL'],
+	['Frontend & mobile', 'React Native · Expo · Next.js · React · Tailwind CSS · NativeWind'],
+	['Backend & data', 'Spring Boot · SpacetimeDB · MMKV (C++ JSI Bindings) · Drizzle ORM · MySQL · MongoDB'],
+	['Observability & cloud', 'GCP · Grafana · Dynatrace · Elasticsearch'],
+	['Tools & infrastructure', 'GitLab CI/CD · Docker · Docker Compose · Bun · Git · FFmpeg · Postman'],
+];
 ---
 
 <!doctype html>
@@ -10,252 +19,190 @@ const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href={`${baseUrl}/favicon.svg?v=2`} />
-		<meta name="viewport" content="width=device-width" />
-		<title>Sriram M — Software Engineer</title>
-		<meta name="description" content="Software Engineer specializing in performance-driven development and local-first architectures." />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="theme-color" content="#201d2b" id="theme-color" />
+		<meta name="description" content="Sriram M. is a software engineer focused on performance, automation, and resilient systems." />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Azeret+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+		<title>Sriram M. — Software Engineer</title>
 		<script is:inline>
-			const theme = (() => {
-				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-					return localStorage.getItem('theme');
-				}
-				return 'dark';
-			})();
-			if (theme === 'dark') {
-				document.documentElement.setAttribute('data-theme', 'dark');
-			} else {
-				document.documentElement.setAttribute('data-theme', 'light');
-			}
-			window.localStorage.setItem('theme', theme);
+			const storedTheme = localStorage.getItem('theme');
+			const theme = storedTheme === 'light' ? 'light' : 'dark';
+			document.documentElement.dataset.theme = theme;
 		</script>
 	</head>
 	<body>
-		<nav class="command-bar" id="command-bar">
-			<div class="nav-header">
-				<span class="nav-logo">[ SRIRAM M. ]</span>
-				<button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Menu">[ ☰ ]</button>
-			</div>
-			<div class="nav-links-wrapper">
-				<div class="nav-group">
-					<a href="#expertise" class="nav-link">[ EXPERTISE ]</a>
-					<a href="#experience" class="nav-link">[ EXPERIENCE ]</a>
-					<a href="#projects" class="nav-link">[ PROJECTS ]</a>
-					<a href="#education-awards" class="nav-link">[ EDU / AWARDS ]</a>
-				</div>
-				<div class="nav-group">
-					<a href={`${baseUrl}/Sriram_M_Software_Engineer_Resume.pdf`} target="_blank" class="nav-link">[ RESUME ]</a>
-					<a href="mailto:msriram765@gmail.com" class="nav-link">[ EMAIL ]</a>
-					<button id="theme-toggle" class="nav-btn" aria-label="Toggle Theme">[ ◐ THEME ]</button>
-				</div>
-			</div>
-		</nav>
-		<main class="schematic-container">
-			
-			<header class="hero-wrapper">
-				<img src={`${baseUrl}/Sriram.jpg`} alt="Portrait of Sriram" class="hero-image" />
-				<div class="hero-title-container">
-					<div class="hero-subtitle">Software Engineer</div>
-					<h1 class="hero-title">SRIRAM M.</h1>
-				</div>
-			</header>
+		<a class="skip-link" href="#main-content">Skip to content</a>
+		<header class="site-header" id="site-header">
+			<a class="wordmark" href="#top" aria-label="Back to top">SM<span aria-hidden="true">.</span></a>
+			<button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+				<span>Menu</span><span aria-hidden="true">+</span>
+			</button>
+			<nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+				<a href="#experience">Experience</a>
+				<a href="#projects">Projects</a>
+				<a href="#expertise">Expertise</a>
+				<a href={`${baseUrl}/Sriram_M_Software_Engineer_Resume.pdf`} target="_blank">Résumé <span aria-hidden="true">↗</span></a>
+				<a href="mailto:msriram765@gmail.com">Contact</a>
+				<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="true">
+					<span class="theme-toggle__label">Dark Mode</span>
+				</button>
+			</nav>
+		</header>
 
-			<section class="grid-section" id="meta">
-				<div class="section-header">
-					<h2 style="font-size: var(--text-lg); margin-bottom: 0.5rem;">SYS.INFO</h2>
-					<div class="mono" style="opacity: 0.8;">[LOCATION] Chennai, IND<br/>[STATUS] Online</div>
+		<main id="main-content">
+			<section class="hero" id="top" aria-labelledby="hero-title">
+				<div class="hero__layout">
+					<div class="hero__main">
+						<p class="micro hero__eyebrow">Software Engineer / Chennai</p>
+						<h1 id="hero-title" class="hero__title">Sriram M.</h1>
+						<p class="hero__statement">I make demanding systems quicker, clearer, and more dependable.</p>
+						<div class="hero__actions">
+							<a class="action action--primary" href={`${baseUrl}/Sriram_M_Software_Engineer_Resume.pdf`} target="_blank">View Résumé <span aria-hidden="true">↗</span></a>
+							<a class="action action--quiet" href="mailto:msriram765@gmail.com">Contact <span aria-hidden="true">→</span></a>
+						</div>
+					</div>
+					<figure class="hero__visual">
+						<div class="hero__image-wrap">
+							<img src={`${baseUrl}/Sriram.jpg`} width="1800" height="1350" alt="Sriram M. outdoors, smiling at the camera." fetchpriority="high" />
+						</div>
+						<figcaption class="micro">Performance / automation / full-stack systems</figcaption>
+					</figure>
 				</div>
-				<div class="section-content">
-					<ul>
-						<li>Software Engineer with a strong foundation in performance-driven development, full-stack application design, and automation infrastructure.</li>
-						<li>Proficient in building high-concurrency systems using Go and TypeScript, and creating highly responsive, local-first mobile architectures.</li>
-						<li>Experienced in building internal developer tools and optimizing CI/CD automation pipelines within enterprise environments.</li>
+			</section>
+
+			<section class="signal-strip" aria-label="Key areas of work">
+				<p>High-concurrency systems</p><span aria-hidden="true">✦</span><p>Local-first architecture</p><span aria-hidden="true">✦</span><p>Developer automation</p>
+			</section>
+
+			<section class="intro section-shell" aria-labelledby="intro-title">
+				<p class="micro section-kicker">The short version</p>
+				<div class="intro__grid">
+					<h2 id="intro-title">Build the system.<br />Find the friction.<br /><em>Remove it.</em></h2>
+					<div class="intro__body">
+						<p>Software Engineer with a strong foundation in performance-driven development, full-stack application design, and automation infrastructure. I build high-concurrency systems with Go and TypeScript, responsive local-first mobile architectures, and internal developer tools that make teams move faster.</p>
+						<div class="contact-list" aria-label="Professional links">
+							<a href="https://www.linkedin.com/in/sriram-m765/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+							<a href="https://github.com/Batcave765" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+							<a href="mailto:msriram765@gmail.com">msriram765@gmail.com <span aria-hidden="true">↗</span></a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="experience section-shell" id="experience" aria-labelledby="experience-title">
+				<header class="section-heading">
+					<p class="micro section-kicker">Selected experience</p>
+					<h2 id="experience-title">Work that holds<br /><em>under pressure.</em></h2>
+				</header>
+				<div class="timeline">
+					<article class="timeline-entry timeline-entry--current">
+						<div class="timeline-entry__meta micro"><span>02/2025 — Present</span><span>Chennai, India</span></div>
+						<div class="timeline-entry__content">
+							<p class="timeline-entry__company">Cognizant Technology Solutions <span>for Macy’s Supply Chain</span></p>
+							<h3>Performance &amp;<br />Automation Engineer</h3>
+							<ul>
+								<li>Develop and maintain custom k6 testing frameworks deployed to validate Macy’s mission-critical Unified Orders Platform handling order creation, returns, and refunds.</li>
+								<li>Designed and engineered an internal self-service developer tool within GitLab CI/CD pipelines, automating test execution workflows and dynamic report generation for engineering teams.</li>
+								<li>Developed a Python automation tool to parse raw performance logs and generate structured analytics reports, eliminating <strong>3 to 4 hours of manual developer effort</strong> per release cycle.</li>
+								<li>Analyze distributed system behavior and microservice health under high-stress conditions (<strong>3,000 TPS</strong>) using GCP container logs, Grafana, and Dynatrace to isolate architectural and database bottlenecks.</li>
+							</ul>
+						</div>
+					</article>
+					<article class="timeline-entry">
+						<div class="timeline-entry__meta micro"><span>05/2023 — 07/2023</span><span>Coimbatore, India</span></div>
+						<div class="timeline-entry__content">
+							<p class="timeline-entry__company">DevCrew</p>
+							<h3>Web Development<br />Intern</h3>
+							<ul>
+								<li>Engineered frontend features and refactored core application UI components for client web projects using React.js and Next.js.</li>
+								<li>Identified, isolated, and resolved runtime bugs and interface regressions, improving frontend stability and overall user experience.</li>
+							</ul>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="projects" id="projects" aria-labelledby="projects-title">
+				<header class="projects__heading section-shell">
+					<p class="micro section-kicker">Two things I built</p>
+					<h2 id="projects-title">Personal work,<br /><em>with real edges.</em></h2>
+				</header>
+				<article class="project project--recur">
+					<div class="project__index micro">Project / 01</div>
+					<div class="project__title"><p class="micro">React Native · Expo</p><h3>Recur</h3><p class="project__lede">A local-first subscription tracker built to make state feel immediate.</p></div>
+					<ul class="project__details">
+						<li>Built a polished, local-first cross-platform mobile application using TypeScript and Expo v54 with the New Architecture fully enabled.</li>
+						<li>Implemented high-performance local storage with MMKV via C++ JavaScript Interface (JSI) bindings, bypassing standard asynchronous overhead for near-instant state operations.</li>
+						<li>Enforced end-to-end type safety and strict data sanitization across database read/write actions with Zod schema validations.</li>
+						<li>Designed smooth interactive interfaces using React Native Reanimated, NativeWind layouts, and accessible Radix UI primitives.</li>
 					</ul>
-					<div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;" class="mono">
-						<a href="mailto:msriram765@gmail.com">[EMAIL]</a>
-						<a href="https://www.linkedin.com/in/sriram-m765/" target="_blank" rel="noopener">[LINKEDIN]</a>
-						<a href="https://github.com/Batcave765" target="_blank" rel="noopener">[GITHUB]</a>
-					</div>
-				</div>
+				</article>
+				<article class="project project--koda">
+					<div class="project__index micro">Project / 02</div>
+					<div class="project__title"><p class="micro">Go · Next.js 15</p><h3>Koda</h3><p class="project__lede">A web application for decoding audio streams, BPM, and musical keys.</p></div>
+					<ul class="project__details">
+						<li>Architected a multi-service web application designed to decode audio streams, calculate BPM, and identify musical keys.</li>
+						<li>Developed a low-overhead Go backend with Gin Gonic and custom Krumhansl–Schmuckler key-detection algorithms via Gonum for FFT math and chroma mapping.</li>
+						<li>Orchestrated deployment workflows using Docker and Docker Compose, integrating FFmpeg codecs for seamless server-side audio conversions.</li>
+					</ul>
+				</article>
 			</section>
 
-			<section class="grid-section" id="expertise">
-				<div class="section-header">
-					<h2 style="font-size: var(--text-lg);">EXPERTISE</h2>
-				</div>
-				<div class="section-content" style="display: flex; flex-direction: column; gap: 1.5rem;">
-					
-					<div>
-						<h3 class="mono" style="font-size: var(--text-sm); color: var(--text-muted); margin-bottom: 0.75rem;">LANGUAGES</h3>
-						<div style="display: flex; flex-wrap: wrap;">
-							<span class="badge">TypeScript</span>
-							<span class="badge">Go</span>
-							<span class="badge">JavaScript</span>
-							<span class="badge">Python</span>
-							<span class="badge">Java</span>
-							<span class="badge">C/C++</span>
-							<span class="badge">SQL</span>
-						</div>
-					</div>
-
-					<div>
-						<h3 class="mono" style="font-size: var(--text-sm); color: var(--text-muted); margin-bottom: 0.75rem;">FRONTEND & MOBILE</h3>
-						<div style="display: flex; flex-wrap: wrap;">
-							<span class="badge">React Native</span>
-							<span class="badge">Expo</span>
-							<span class="badge">Next.js</span>
-							<span class="badge">React</span>
-							<span class="badge">Tailwind CSS/NativeWind</span>
-						</div>
-					</div>
-
-					<div>
-						<h3 class="mono" style="font-size: var(--text-sm); color: var(--text-muted); margin-bottom: 0.75rem;">BACKEND & DATABASES</h3>
-						<div style="display: flex; flex-wrap: wrap;">
-							<span class="badge">Spring Boot</span>
-							<span class="badge">SpacetimeDB</span>
-							<span class="badge">MMKV (C++ JSI Bindings)</span>
-							<span class="badge">Drizzle ORM</span>
-							<span class="badge">MySQL</span>
-							<span class="badge">MongoDB</span>
-						</div>
-					</div>
-
-					<div>
-						<h3 class="mono" style="font-size: var(--text-sm); color: var(--text-muted); margin-bottom: 0.75rem;">OBSERVABILITY & CLOUD</h3>
-						<div style="display: flex; flex-wrap: wrap;">
-							<span class="badge">GCP</span>
-							<span class="badge">Grafana</span>
-							<span class="badge">Dynatrace</span>
-							<span class="badge">Elasticsearch</span>
-						</div>
-					</div>
-
-					<div>
-						<h3 class="mono" style="font-size: var(--text-sm); color: var(--text-muted); margin-bottom: 0.75rem;">TOOLS & INFRASTRUCTURE</h3>
-						<div style="display: flex; flex-wrap: wrap;">
-							<span class="badge">GitLab CI/CD pipelines</span>
-							<span class="badge">Docker</span>
-							<span class="badge">Docker Compose</span>
-							<span class="badge">Bun</span>
-							<span class="badge">Git</span>
-							<span class="badge">FFmpeg</span>
-							<span class="badge">Postman</span>
-						</div>
-					</div>
-
-				</div>
+			<section class="expertise section-shell" id="expertise" aria-labelledby="expertise-title">
+				<header class="section-heading"><p class="micro section-kicker">The working set</p><h2 id="expertise-title">Tools are a means.<br /><em>Systems are the point.</em></h2></header>
+				<dl class="skill-list">
+					{skills.map(([label, value]) => <div><dt>{label}</dt><dd>{value}</dd></div>)}
+				</dl>
 			</section>
 
-			<section class="grid-section" id="experience">
-				<div class="section-header">
-					<h2 style="font-size: var(--text-lg);">EXPERIENCE</h2>
-				</div>
-				<div class="section-content">
-					
-					<article class="item-block">
-						<div class="item-header">
-							<h3 class="item-title">Performance & Automation Eng.</h3>
-							<div class="mono" style="color: var(--text-muted);">02/2025 – PRES</div>
-						</div>
-						<p class="mono" style="color: var(--ink); margin-bottom: 1rem;">Cognizant Tech. Solutions (Macy's Supply Chain)</p>
-						<ul style="margin: 0;">
-							<li>Developing and updating test scripts with custom k6 frameworks and validating mission-critical Unified Orders Platform.</li>
-							<li>Engineered internal self-service developer tool within GitLab CI/CD, automating test workflows and dynamic reports.</li>
-							<li>Developed Python automation parsing raw performance logs, eliminating 3-4 hours of manual effort per cycle.</li>
-							<li>Analyze distributed systems under high-stress (3,000 TPS) via GCP, Grafana, and Dynatrace to isolate bottlenecks.</li>
-						</ul>
-					</article>
-
-					<article class="item-block">
-						<div class="item-header">
-							<h3 class="item-title">Web Development Intern</h3>
-							<div class="mono" style="color: var(--text-muted);">05/2023 – 07/2023</div>
-						</div>
-						<p class="mono" style="color: var(--ink); margin-bottom: 1rem;">DevCrew</p>
-						<ul style="margin: 0;">
-							<li>Engineered frontend features and refactored core application UI components for client web projects using React.js and Next.js.</li>
-							<li>Identified, isolated, and resolved runtime bugs and interface regressions, improving frontend stability.</li>
-						</ul>
-					</article>
-
+			<section class="closing section-shell" aria-labelledby="closing-title">
+				<div class="closing__main"><p class="micro section-kicker">The foundations</p><h2 id="closing-title">Still curious.<br /><em>Still building.</em></h2></div>
+				<div class="closing__ledger">
+					<section aria-labelledby="education-title"><p class="micro" id="education-title">Education</p><h3>Bachelor of Technology — Information Technology</h3><p>Sri Krishna College of Engineering and Technology<br />Coimbatore, Tamil Nadu, India · 06/2021 — 06/2025</p></section>
+					<section aria-labelledby="awards-title"><p class="micro" id="awards-title">Awards &amp; hackathons</p><ul><li><strong>Second Runner-up (National)</strong> · Innohacks ’22<br /><span>KIET Group of Institutions (Innogeeks), New Delhi · May 2022</span></li><li><strong>Most Impactful Hack (National)</strong> · Hack @ SKCET<br /><span>Hackclub SKCET, Coimbatore · February 2022</span></li></ul></section>
 				</div>
 			</section>
-
-			<section class="grid-section" id="projects">
-				<div class="section-header">
-					<h2 style="font-size: var(--text-lg);">PROJECTS</h2>
-				</div>
-				<div class="section-content">
-					
-					<article class="item-block">
-						<div class="item-header">
-							<h3 class="item-title">Recur</h3>
-							<div class="mono" style="color: var(--text-muted);">REACT NATIVE / EXPO</div>
-						</div>
-						<ul style="margin: 0;">
-							<li><strong>Local-First Subscription Tracker.</strong> Built a highly polished, local-first cross-platform mobile application utilizing TypeScript and Expo v54 with the New Architecture fully enabled.</li>
-							<li>Implemented a high-performance local data storage layer using MMKV via C++ JavaScript Interface (JSI) bindings, bypassing standard asynchronous overhead for near-instant state operations.</li>
-							<li>Enforced end-to-end type safety and strict data sanitization across database read/write actions using Zod schema validations.</li>
-							<li>Designed smooth interactive interfaces using React Native Reanimated, NativeWind styling layouts, and accessible Radix UI primitives.</li>
-						</ul>
-					</article>
-
-					<article class="item-block">
-						<div class="item-header">
-							<h3 class="item-title">Koda</h3>
-							<div class="mono" style="color: var(--text-muted);">GO / NEXT.JS 15</div>
-						</div>
-						<ul style="margin: 0;">
-							<li><strong>Music Analysis Web Application.</strong> Architected a multi-service web application designed to decode audio streams, calculate BPM, and identify musical keys.</li>
-							<li>Developed a low-overhead backend engine in Go using Gin Gonic, implementing custom Krumhansl-Schmuckler key-detection algorithms via Gonum for FFT math and Chroma mapping.</li>
-							<li>Orchestrated deployment workflows using Docker and Docker Compose, integrating FFmpeg codecs to handle server-side audio conversions seamlessly.</li>
-						</ul>
-					</article>
-
-				</div>
-			</section>
-
-			<section class="grid-section" id="education-awards">
-				<div class="section-header">
-					<h2 style="font-size: var(--text-lg);">EDU / AWARDS</h2>
-				</div>
-				<div class="section-content">
-					
-					<article class="item-block">
-						<h3 class="item-title" style="font-size: var(--text-lg);">B.Tech Information Technology</h3>
-						<p class="mono" style="margin-bottom: 0;">Sri Krishna College of Engineering and Technology</p>
-						<p class="mono" style="color: var(--text-muted);">06/2021 – 06/2025</p>
-					</article>
-
-					<article class="item-block">
-						<h3 class="item-title" style="font-size: var(--text-lg); margin-bottom: 1rem;">Awards</h3>
-						<div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
-							<p style="margin: 0;"><strong>Second Runner-up (National)</strong> — Innohacks '22</p>
-							<span class="mono" style="color: var(--text-muted); font-size: var(--text-sm);">MAY 2022</span>
-						</div>
-						<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
-							<p style="margin: 0;"><strong>Most Impactful Hack (National)</strong> — Hack @ SKCET</p>
-							<span class="mono" style="color: var(--text-muted); font-size: var(--text-sm);">FEB 2022</span>
-						</div>
-					</article>
-
-				</div>
-			</section>
-
-			<footer class="footer">
-				&copy; {new Date().getFullYear()} SRIRAM M. // COMPILED SUCCESSFULLY.
-			</footer>
-			
 		</main>
+
+		<footer class="site-footer">
+			<p class="micro">Available for a thoughtful engineering conversation.</p>
+			<a href="mailto:msriram765@gmail.com">msriram765@gmail.com <span aria-hidden="true">↗</span></a>
+			<a class="back-top micro" href="#top">Back to top ↑</a>
+		</footer>
+
 		<script>
-			document.getElementById('hamburger-btn')?.addEventListener('click', () => {
-				document.getElementById('command-bar')?.classList.toggle('menu-open');
+			const root = document.documentElement;
+			const themeToggle = document.querySelector('#theme-toggle');
+			const menuToggle = document.querySelector('#menu-toggle');
+			const header = document.querySelector('#site-header');
+			const themeColor = document.querySelector('#theme-color');
+
+			const syncTheme = () => {
+				const isDark = root.dataset.theme === 'dark';
+				themeToggle?.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} theme`);
+				themeToggle?.setAttribute('aria-pressed', String(isDark));
+				themeToggle?.querySelector('.theme-toggle__label')?.replaceChildren(isDark ? 'Dark Mode' : 'Light Mode');
+				themeColor?.setAttribute('content', isDark ? '#201d2b' : '#fbfbfb');
+			};
+
+			syncTheme();
+			themeToggle?.addEventListener('click', () => {
+				root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+				localStorage.setItem('theme', root.dataset.theme);
+				syncTheme();
 			});
-			document.getElementById('theme-toggle')?.addEventListener('click', () => {
-				const currentTheme = document.documentElement.getAttribute('data-theme');
-				const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-				document.documentElement.setAttribute('data-theme', newTheme);
-				localStorage.setItem('theme', newTheme);
+
+			menuToggle?.addEventListener('click', () => {
+				const open = header?.classList.toggle('is-menu-open') ?? false;
+				menuToggle.setAttribute('aria-expanded', String(open));
 			});
+			document.querySelectorAll('#site-nav a').forEach((link) => link.addEventListener('click', () => {
+				header?.classList.remove('is-menu-open');
+				menuToggle?.setAttribute('aria-expanded', 'false');
+			}));
+			requestAnimationFrame(() => root.classList.add('is-ready'));
 		</script>
 		<Analytics />
 		<SpeedInsights />
