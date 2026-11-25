@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-  <!-- Deep charcoal background, matching dark theme -->
-  <rect width="120" height="120" fill="#0f1115" rx="24" />
-  
-  <!-- Hard-edged, geometric 'S' matching the technical aesthetic -->
-  <path d="M40 85 V35 H80 V45 H55 V52.5 H75 V85 H35 V75 H60 V67.5 H40 Z" fill="#e2e8f0" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#a8e554" d="M0 0h46l18 18v46H0z"/><path fill="#252130" d="M14 16h24v7H21v6h17v20H14v-7h17v-6H14z"/></svg>
