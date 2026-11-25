@@ -12,10 +12,6 @@ const skills = [
   ['Cloud & observability', ['GCP', 'Grafana', 'Dynatrace', 'Elasticsearch']],
   ['Tools & infrastructure', ['GitLab CI/CD', 'Docker', 'Docker Compose', 'Bun', 'Git', 'FFmpeg', 'Postman']],
 ];
-const waveform = Array.from({ length: 43 }, (_, i) => {
-  const height = 12 + Math.abs(Math.sin(i * 1.83) * Math.cos(i * .27)) * 114;
-  return { x: i * 9 + 6, y: (144 - height) / 2, height };
-});
 ---
 
 <!doctype html>
@@ -105,24 +101,73 @@ const waveform = Array.from({ length: 43 }, (_, i) => {
       </section>
 
       <section class="projects section" id="projects" aria-labelledby="projects-title">
-        <div class="shell section-heading"><h2 id="projects-title">Curiosity,<br />shipped<span class="accent">.</span></h2><p>Personal projects. Real engineering decisions.<br />A closer look at how I build.</p></div>
-        <article class="project project-recur shell">
+        <div class="shell section-heading">
+          <h2 id="projects-title">Curiosity,<br />shipped<span class="accent">.</span></h2>
+          <div class="project-intro">
+            <p>My friend Rishikesh S and I build these apps together as YeetFactory.</p>
+            <a class="button button-primary" href="https://yeetfactory.top/" target="_blank" rel="noopener">Visit yeetfactory.top <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <article class="project shell">
+          <div class="project-visual rexi-visual" role="img" aria-label="Rexi groups doses into four pillbox compartments. When a dose is due, you can mark it taken, snooze it, or skip it.">
+            <div class="visual-topline"><span>Rexi / Android application</span><span aria-hidden="true">↗</span></div>
+            <div class="project-illustration"><div class="pillbox"><span>Morning</span><strong>Afternoon</strong><span>Evening</span><span>Night</span></div></div>
+            <div class="project-path"><span>Schedule</span><b aria-hidden="true">→</b><span>Reminder</span><b aria-hidden="true">→</b><span>Dose response</span></div>
+          </div>
+          <div class="project-copy">
+            <p class="project-type">Offline medication tracker</p>
+            <h3>Rexi</h3>
+            <p>An Android app that lays out each day as a four-compartment pillbox and keeps medication schedules and history on the phone.</p>
+            <div class="project-takeaway"><span aria-hidden="true">↳</span><p><strong>Privacy on shared phones.</strong> Lock the app with a fingerprint or PIN and hide medication names in notifications.</p></div>
+            <div class="project-meta">
+              <div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Room</span></div>
+              <a class="text-link" href="https://github.com/yeetfactory/rexi" target="_blank" rel="noopener" aria-label="GitHub repository for Rexi">GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+            <details>
+              <summary>Engineering details <span aria-hidden="true">+</span></summary>
+              <ul><li>Take, snooze, or skip a dose from a notification, full-screen reminder, or home screen widget.</li><li>Track remaining medication and export 30 days of dose history as a PDF.</li><li>A local backup file lets you move your history to a new phone.</li></ul>
+            </details>
+          </div>
+        </article>
+        <article class="project project-reverse shell">
+          <div class="project-visual" role="img" aria-label="Déjà scans for nearby Bluetooth and Wi-Fi devices, records sightings, and flags repeat encounters.">
+            <div class="visual-topline"><span>Déjà / Android application</span><span aria-hidden="true">↗</span></div>
+            <div class="project-illustration sightings"><span class="sighting">First seen</span><span aria-hidden="true">→</span><strong class="sighting">Seen again</strong></div>
+            <div class="project-path"><span>Bluetooth / Wi-Fi</span><b aria-hidden="true">→</b><span>Sightings</span><b aria-hidden="true">→</b><span>Alerts</span></div>
+          </div>
+          <div class="project-copy">
+            <p class="project-type">Nearby device awareness</p>
+            <h3>Déjà</h3>
+            <p>An Android app that remembers nearby Bluetooth and Wi-Fi devices and flags when one returns or appears to follow you between places.</p>
+            <div class="project-takeaway"><span aria-hidden="true">↳</span><p><strong>Alerts with evidence.</strong> Repeated sightings across distinct places can trigger an alert with a timeline of the encounters.</p></div>
+            <div class="project-meta">
+              <div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Room</span></div>
+              <a class="text-link" href="https://github.com/yeetfactory/deja" target="_blank" rel="noopener" aria-label="GitHub repository for Déjà">GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+            <details>
+              <summary>Engineering details <span aria-hidden="true">+</span></summary>
+              <ul><li>Treats rotating Bluetooth addresses as separate encounters.</li><li>Shows live signal strength and exports alert timelines as CSV.</li><li>Keeps sightings on-device and lets you choose how long to retain them.</li></ul>
+            </details>
+          </div>
+        </article>
+        <article class="project shell">
           <div class="project-visual recur-visual" role="img" aria-label="Recur architecture: React Native interface, Zod validation, and MMKV storage, all on device.">
             <div class="visual-topline"><span>Recur / Mobile application</span><span aria-hidden="true">↗</span></div>
-            <div class="local-orbit"><div class="orbit-ring orbit-ring-outer"></div><div class="orbit-ring orbit-ring-inner"></div><span class="orbit-label">Local-first.</span><strong>On your<br />device.</strong><span class="orbit-node" aria-hidden="true"></span></div>
-            <div class="storage-path"><span>React Native</span><b aria-hidden="true">→</b><span>Zod</span><b aria-hidden="true">→</b><span>MMKV</span></div>
+            <div class="project-illustration local-orbit"><div class="orbit-ring orbit-ring-outer"></div><div class="orbit-ring orbit-ring-inner"></div><span class="orbit-label">Local-first.</span><strong>On your<br />device.</strong><span class="orbit-node" aria-hidden="true"></span></div>
+            <div class="project-path"><span>React Native</span><b aria-hidden="true">→</b><span>Zod</span><b aria-hidden="true">→</b><span>MMKV</span></div>
           </div>
-          <div class="project-copy"><p class="project-type">Local-first subscription tracker</p><h3>Recur</h3><p>Your subscriptions, with state that feels immediate. A cross-platform mobile app built around fast, on-device storage.</p><div class="project-takeaway"><span aria-hidden="true">↳</span><p><strong>Direct to native storage.</strong> MMKV via C++ JSI bindings bypasses asynchronous overhead for near-instant state operations.</p></div><div class="tags"><span class="tag">TypeScript</span><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">MMKV</span></div><details><summary>Engineering details <span aria-hidden="true">+</span></summary><ul><li>Expo v54 with the React Native New Architecture fully enabled.</li><li>Zod schema validation enforces type safety and sanitizes database reads and writes.</li><li>React Native Reanimated, NativeWind, and accessible Radix UI primitives power the interface.</li></ul></details></div>
-        </article>
-        <article class="project project-koda shell">
-          <div class="project-visual koda-visual" role="img" aria-label="Koda audio analysis pipeline: audio decoded with FFmpeg, FFT and chroma analysis, then musical key and BPM detection.">
-            <div class="visual-topline"><span>Koda / Audio analysis</span><span aria-hidden="true">↗</span></div>
-            <div class="audio-art"><p>Find the<br /><strong>frequency.</strong></p><svg class="waveform" aria-hidden="true" viewBox="0 0 396 144">{waveform.map(bar => <rect x={bar.x} y={bar.y} width="4" height={bar.height} rx="2" />)}</svg></div>
-            <div class="audio-path"><span>Audio</span><b aria-hidden="true">→</b><span>FFT + Chroma</span><b aria-hidden="true">→</b><span>Key / BPM</span></div>
+          <div class="project-copy">
+            <p class="project-type">Local-first subscription tracker</p>
+            <h3>Recur</h3>
+            <p>Your subscriptions, with state that feels immediate. A cross-platform mobile app built around fast, on-device storage.</p>
+            <div class="project-takeaway"><span aria-hidden="true">↳</span><p><strong>Direct to native storage.</strong> MMKV via C++ JSI bindings bypasses asynchronous overhead for near-instant state operations.</p></div>
+            <div class="project-meta">
+              <div class="tags"><span class="tag">TypeScript</span><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">MMKV</span></div>
+              <a class="text-link" href="https://github.com/yeetfactory/recur" target="_blank" rel="noopener" aria-label="GitHub repository for Recur">GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+            <details><summary>Engineering details <span aria-hidden="true">+</span></summary><ul><li>Expo v54 with the React Native New Architecture fully enabled.</li><li>Zod schema validation enforces type safety and sanitizes database reads and writes.</li><li>React Native Reanimated, NativeWind, and accessible Radix UI primitives power the interface.</li></ul></details>
           </div>
-          <div class="project-copy"><p class="project-type">Music analysis web application</p><h3>Koda</h3><p>From an audio stream to its musical DNA. A multi-service application that identifies BPM and musical keys.</p><div class="project-takeaway"><span aria-hidden="true">↳</span><p><strong>Math meets music.</strong> A low-overhead Go engine uses FFT and chroma mapping with a custom Krumhansl–Schmuckler key-detection algorithm.</p></div><div class="tags"><span class="tag">Go</span><span class="tag">Next.js 15</span><span class="tag">Gonum</span><span class="tag">FFmpeg</span></div><details><summary>Engineering details <span aria-hidden="true">+</span></summary><ul><li>Gin Gonic powers the Go backend; Gonum handles FFT math and chroma mapping.</li><li>FFmpeg decodes and converts audio server-side.</li><li>Docker and Docker Compose orchestrate the multi-service deployment.</li></ul></details></div>
         </article>
-        <div class="shell project-footer"><p>More of what I’m building</p><a class="text-link" href="https://github.com/Batcave765" target="_blank" rel="noopener">Find me on GitHub <span aria-hidden="true">↗</span></a></div>
       </section>
 
       <section class="expertise section" id="expertise" aria-labelledby="expertise-title"><div class="shell expertise-layout"><div class="expertise-heading"><h2 id="expertise-title">The working<br />toolkit<span class="accent">.</span></h2><p>Across the stack.<br />Close to the system.</p></div><dl class="skills-list">{skills.map(([label, items]) => <div><dt>{label}</dt><dd>{Array.isArray(items) && items.map(item => <span>{item}</span>)}</dd></div>)}</dl></div></section>
